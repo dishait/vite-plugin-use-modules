@@ -29,14 +29,14 @@ importers:
       '@vitejs/plugin-vue': ^2.2.4
       vite: ^2.8.6
       vite-plugin-inspect: ^0.3.15
-      vite-plugin-modules: workspace:*
+      vite-plugin-use-modules: workspace:*
       vue: ^3.2.31
       vue-router: ^4.0.14
     devDependencies:
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
       vite: 2.8.6
       vite-plugin-inspect: 0.3.15_vite@2.8.6
-      vite-plugin-modules: link:../..
+      vite-plugin-use-modules: link:../..
       vue: 3.2.31
       vue-router: 4.0.14_vue@3.2.31
 

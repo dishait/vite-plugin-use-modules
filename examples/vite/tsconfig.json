@@ -12,7 +12,7 @@
 		"resolveJsonModule": true,
 		"moduleResolution": "node",
 		"useDefineForClassFields": true,
-		"types": ["vite-plugin-modules/client"]
+		"types": ["vite-plugin-use-modules/client"]
 	},
 	"include": [
 		"types",

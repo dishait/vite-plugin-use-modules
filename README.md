@@ -1,4 +1,4 @@
-# vite-plugin-modules
+# vite-plugin-use-modules
 
 自动加载 `modules`
 
@@ -13,12 +13,12 @@
 1. 安装包
 
 ```shell
-pnpm i vite-plugin-modules -D
+pnpm i vite-plugin-use-modules -D
 
 # or 
 
-# npm i vite-plugin-modules -D
-# yarn add vite-plugin-modules -D
+# npm i vite-plugin-use-modules -D
+# yarn add vite-plugin-use-modules -D
 ```
 
 2. 注册插件
@@ -27,7 +27,7 @@ pnpm i vite-plugin-modules -D
 // vite.config.js or vite.config.ts
 
 import { defineConfig } from 'vite'
-import Modules from 'vite-plugin-modules'
+import Modules from 'vite-plugin-use-modules'
 
 export default defineConfig({
     plugins: [Modules()]
@@ -83,7 +83,7 @@ app.mount('#app')
 ```json
 {
     "compilerOptions": {
-        "types": ["vite-plugin-modules/client"]
+        "types": ["vite-plugin-use-modules/client"]
     }
 }
 ```
@@ -96,7 +96,7 @@ app.mount('#app')
 
 ```ts
 import { defineConfig } from 'vite'
-import Modules from 'vite-plugin-modules'
+import Modules from 'vite-plugin-use-modules'
 
 export default defineConfig({
     plugins: [

@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "name": "vite-plugin-modules",
+  "name": "vite-plugin-use-modules",
   "description": "自动加载 modules",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dishait/vite-plugin-modules.git"
+    "url": "git+https://github.com/dishait/vite-plugin-use-modules.git"
   },
   "exports": {
     "./*": "./*",
@@ -47,7 +47,7 @@
     "url": "https://github.com/markthree"
   },
   "bugs": {
-    "url": "https://github.com/dishait/vite-plugin-modules/issues"
+    "url": "https://github.com/dishait/vite-plugin-use-modules/issues"
   },
   "license": "MIT",
   "devDependencies": {

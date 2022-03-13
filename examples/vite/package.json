@@ -16,7 +16,7 @@
     "@vitejs/plugin-vue": "^2.2.4",
     "vite": "^2.8.6",
     "vite-plugin-inspect": "^0.3.15",
-    "vite-plugin-modules": "workspace:*",
+    "vite-plugin-use-modules": "workspace:*",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14"
   }

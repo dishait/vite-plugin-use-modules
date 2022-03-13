@@ -20,7 +20,7 @@ const usePlugin = (options?: Partial<Options>): Plugin => {
 
 	target = normalizePath(target)
 	return {
-		name: useName('modules'),
+		name: useName('use-modules'),
 		resolveId(id) {
 			if (id === virtualModuleId) {
 				return resolvedVirtualModuleId
