@@ -1,13 +1,13 @@
 {
   "version": "0.0.1",
-  "name": "vite-plugin-name",
-  "description": "开箱即用的 vite 插件模板",
+  "name": "vite-plugin-modules",
+  "description": "自动加载 modules",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/name/repo.git"
+    "url": "git+https://github.com/dishait/vite-plugin-modules.git"
   },
   "exports": {
     "./*": "./*",
@@ -42,13 +42,11 @@
     "template"
   ],
   "author": {
-    "name": "name",
-    "email": "xx@xx.com",
-    "url": "https://github.com/name"
+    "name": "markthree",
+    "url": "https://github.com/markthree"
   },
   "bugs": {
-    "email": "xx@xx.com",
-    "url": "https://github.com/name/repo/issues"
+    "url": "https://github.com/dishait/vite-plugin-modules/issues"
   },
   "license": "MIT",
   "devDependencies": {

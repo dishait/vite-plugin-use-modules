@@ -17,6 +17,6 @@
     "vite": "^2.8.1",
     "vite-plugin-inspect": "^0.3.14",
     "vue": "^3.2.30",
-    "vite-plugin-name": "workspace:*"
+    "vite-plugin-modules": "workspace:*"
   }
 }
