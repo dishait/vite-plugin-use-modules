@@ -1,11 +1,3 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-    Hello, world!!
+	<router-view />
 </template>
-
-<style>
-
-</style>

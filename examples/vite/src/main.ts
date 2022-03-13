@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { msg } from 'virtual:modules'
-
-console.log(msg)
+import { useModules } from 'virtual:modules'
 
 const app = createApp(App)
+
+useModules(app)
 
 app.mount('#app')
