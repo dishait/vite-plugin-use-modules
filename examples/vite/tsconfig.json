@@ -11,7 +11,8 @@
 		"lib": ["esnext", "dom"],
 		"resolveJsonModule": true,
 		"moduleResolution": "node",
-		"useDefineForClassFields": true
+		"useDefineForClassFields": true,
+		"types": ["vite-plugin-modules/client"]
 	},
 	"include": [
 		"types",
