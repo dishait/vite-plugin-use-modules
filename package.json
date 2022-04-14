@@ -59,6 +59,13 @@
     "tsup": "^5.12.1",
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
-    "vitest": "^0.1.27"
+    "vitest": "^0.1.27",
+    "vue": "^3.2.31"
+  },
+  "peerDependencies": {
+    "vue": ">=3.2.31"
+  },
+  "dependencies": {
+    "magic-string": "^0.26.1"
   }
 }

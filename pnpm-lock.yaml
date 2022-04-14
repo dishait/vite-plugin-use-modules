@@ -8,11 +8,15 @@ importers:
       bumpp: ^7.1.1
       c8: ^7.11.0
       esno: ^0.14.1
+      magic-string: ^0.26.1
       plop: ^3.0.5
       tsup: ^5.12.1
       typescript: ^4.6.2
       vite: ^2.8.6
       vitest: ^0.1.27
+      vue: ^3.2.31
+    dependencies:
+      magic-string: 0.26.1
     devDependencies:
       '@types/node': 17.0.21
       bumpp: 7.1.1
@@ -23,6 +27,7 @@ importers:
       typescript: 4.6.2
       vite: 2.8.6
       vitest: 0.1.27_c8@7.11.0
+      vue: 3.2.31
 
   examples/vite:
     specifiers:
@@ -1515,6 +1520,13 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /magic-string/0.26.1:
+    resolution: {integrity: sha512-ndThHmvgtieXe8J/VGPjG+Apu7v7ItcD5mhEIvOscWjPF/ccOiLxHaSuCAS2G+3x4GKsAbT8u7zdyamupui8Tg==}
+    engines: {node: '>=12'}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: false
+
   /make-dir/3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -2077,7 +2089,6 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
-    dev: true
 
   /string-argv/0.3.1:
     resolution: {integrity: sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==}

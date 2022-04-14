@@ -4,5 +4,5 @@ import Inspect from 'vite-plugin-inspect'
 import Modules from 'vite-plugin-use-modules'
 
 export default defineConfig({
-	plugins: [Vue(), Inspect(), Modules()]
+	plugins: [Vue(), Inspect(), Modules({ auto: true })]
 })
