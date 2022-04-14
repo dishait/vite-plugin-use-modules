@@ -12,19 +12,13 @@
 1. 安装包
 
 ```shell
-pnpm i vite-plugin-use-modules -D
-
-# or
-
-# npm i vite-plugin-use-modules -D
-# yarn add vite-plugin-use-modules -D
+npm i vite-plugin-use-modules -D
 ```
 
 2. 注册插件
 
 ```ts
 // vite.config.js or vite.config.ts
-
 import { defineConfig } from 'vite'
 import Modules from 'vite-plugin-use-modules'
 
