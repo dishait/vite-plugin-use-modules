@@ -66,6 +66,7 @@
     "vue": ">=3.2.31"
   },
   "dependencies": {
+    "local-pkg": "^0.4.1",
     "magic-string": "^0.26.1"
   }
 }
