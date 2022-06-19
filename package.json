@@ -26,7 +26,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
-    "dev": "pnpm run build -- --watch",
+    "dev": "pnpm run build --watch",
     "init:info": "plop --plopfile scripts/init.js",
     "release": "bumpp --commit --push --tag && npm publish",
     "play": "pnpm -C examples/vite run dev",
@@ -66,7 +66,6 @@
     "vue": ">=3.2.31"
   },
   "dependencies": {
-    "local-pkg": "^0.4.1",
-    "magic-string": "^0.26.1"
+    "local-pkg": "^0.4.1"
   }
 }

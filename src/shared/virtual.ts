@@ -6,9 +6,10 @@ import { isVite2 } from './base'
  * @returns
  */
 export const createVirtualGlob = async (target: string) => {
+	const t = `'${target}/*.[tj]s'`
 	return (await isVite2())
-		? `import.meta.globEager('${target}/*.[tj]s')`
-		: `import.meta.glob('${target}/*.[tj]s', { eager: true })`
+		? `import.meta.globEager(${t})`
+		: `import.meta.glob(${t}, { eager: true })`
 }
 
 /**
@@ -19,9 +20,9 @@ export const createVirtualGlob = async (target: string) => {
 export const createVirtualModule = async (
 	target: string
 ) => {
-	return `export const modules = ${await createVirtualGlob(
-		target
-	)}\n
+	return `\n
+export const modules = ${await createVirtualGlob(target)}
+
 export const useModules = app => {
     Object.values(modules).forEach(module => {
         if (typeof module.default === 'function') {

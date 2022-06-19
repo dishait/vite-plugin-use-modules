@@ -6,7 +6,7 @@ import { getPackageInfo } from 'local-pkg'
  * @param path 路径
  * @returns 路径
  */
-export const normalizePath = (path: string): string => {
+export function normalizePath(path: string) {
 	path = path.startsWith('/') ? path : '/' + path
 	return posix.normalize(path)
 }
@@ -15,7 +15,7 @@ export const normalizePath = (path: string): string => {
  * vite 2 版本判断
  * @returns
  */
-export const isVite2 = async () => {
+export async function isVite2() {
 	const info = await getPackageInfo('vite')
 	if (info) {
 		return /.?2/.test(info.version)
