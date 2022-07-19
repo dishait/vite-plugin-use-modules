@@ -130,6 +130,23 @@ const app = createApp(App)
 app.mount('#app')
 ```
 
+3. 规范化
+
+```ts
+import { defineConfig } from 'vite'
+import Modules from 'vite-plugin-use-modules'
+
+export default defineConfig({
+	plugins: [
+		Modules({
+			normalize(target) {
+				return `'${target}/*.[tj]s'` // 返回扫描的 glob
+			}
+		})
+	]
+})
+```
+
 <br />
 <br />
 
