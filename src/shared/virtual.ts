@@ -2,26 +2,23 @@ import { isVite2 } from './base'
 
 /**
  * 创建虚拟 Glob 引入
- * @param target 目标
+ * @param glob
  * @returns
  */
-export const createVirtualGlob = async (target: string) => {
-	const t = `'${target}/*.[tj]s'`
+export async function createVirtualGlob(glob: string) {
 	return (await isVite2())
-		? `import.meta.globEager(${t})`
-		: `import.meta.glob(${t}, { eager: true })`
+		? `import.meta.globEager(${glob})`
+		: `import.meta.glob(${glob}, { eager: true })`
 }
 
 /**
  * 创建虚拟模块
- * @param target 目标
+ * @param glob
  * @returns 虚拟模块
  */
-export const createVirtualModule = async (
-	target: string
-) => {
+export async function createVirtualModule(glob: string) {
 	return `\n
-export const modules = ${await createVirtualGlob(target)}
+export const modules = ${await createVirtualGlob(glob)}
 
 export const useModules = app => {
     Object.values(modules).forEach(module => {

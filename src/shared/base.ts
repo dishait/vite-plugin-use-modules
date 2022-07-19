@@ -22,3 +22,12 @@ export async function isVite2() {
 	}
 	return false
 }
+
+/**
+ * 默认规范化
+ * @param target 目标
+ * @returns
+ */
+export function defaultNormalize(target: string) {
+	return `'${target}/*.[tj]s'`
+}

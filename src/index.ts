@@ -1,6 +1,9 @@
 import type { Plugin } from 'vite'
-import { normalizePath } from './shared/base'
 import { createVirtualModule } from './shared/virtual'
+import {
+	normalizePath,
+	defaultNormalize
+} from './shared/base'
 
 interface Options {
 	/**
@@ -14,6 +17,12 @@ interface Options {
 	 * @default false
 	 */
 	auto?: boolean
+
+	/**
+	 * 规范化
+	 * @default (target) => `'${target}/*.[tj]s'`
+	 */
+	normalize?: (target?: string) => string
 }
 
 function transform(code: string, id: string) {
@@ -31,8 +40,12 @@ function transform(code: string, id: string) {
 export default function (
 	options?: Partial<Options>
 ): Plugin {
-	let { target = 'src/modules', auto = false } =
-		options || {}
+	let {
+		auto = false,
+		target = 'src/modules',
+		normalize = defaultNormalize
+	} = options || {}
+
 	const virtualModuleId = 'virtual:modules'
 	const resolvedVirtualModuleId = '\0' + virtualModuleId
 
@@ -47,7 +60,8 @@ export default function (
 		},
 		load(id) {
 			if (id === resolvedVirtualModuleId) {
-				return createVirtualModule(target)
+				const glob = normalize(target)
+				return createVirtualModule(glob)
 			}
 		},
 		transform: auto ? transform : undefined
