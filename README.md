@@ -53,6 +53,11 @@ const router = createRouter({
 })
 
 export default (app: App) => app.use(router)
+
+// export default router
+
+// 如果需要选项，则可以导出数组，第二个参数即为选项
+// export default [router, options]
 ```
 
 ```ts
