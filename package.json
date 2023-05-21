@@ -2,7 +2,7 @@
   "version": "1.3.1",
   "name": "vite-plugin-use-modules",
   "description": "自动加载 modules",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
@@ -12,7 +12,7 @@
   "exports": {
     "./*": "./*",
     ".": {
-      "require": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
@@ -22,25 +22,15 @@
     "client.d.ts"
   ],
   "scripts": {
-    "build": "tsup",
-    "test": "vitest",
-    "test:watch": "vitest --watch",
-    "coverage": "vitest --coverage",
-    "dev": "pnpm run build --watch",
-    "init:info": "plop --plopfile scripts/init.js",
-    "release": "bumpp --commit --push --tag && npm publish",
-    "play": "pnpm -C examples/vite run dev",
-    "play:open": "pnpm -C examples/vite run dev:open",
-    "play:host": "pnpm -C examples/vite run dev:host",
-    "play:build": "pnpm -C examples/vite run build",
-    "play:preview": "pnpm -C examples/vite run preview",
-    "play:preview:open": "pnpm -C examples/vite run preview:open",
-    "play:preview:host": "pnpm -C examples/vite run preview:host"
+    "build": "unbuild",
+    "dev": "unbuild --stub && pnpm -C examples/vite dev",
+    "release": "bumpp --commit --push --tag && npm publish"
   },
   "keywords": [
     "vite",
-    "plugin",
-    "template"
+    "vue",
+    "module",
+    "plugin"
   ],
   "author": {
     "name": "markthree",
@@ -51,21 +41,18 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^17.0.45",
-    "bumpp": "^7.2.0",
-    "c8": "^7.11.3",
-    "esno": "^0.14.1",
-    "plop": "^3.1.1",
-    "tsup": "^5.12.9",
-    "typescript": "^4.7.4",
-    "vite": "^2.9.14",
-    "vitest": "^0.1.27",
-    "vue": "^3.2.37"
+    "@types/node": "^18.16.13",
+    "bumpp": "^9.1.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vite": "^4.3.8",
+    "vue": "^3.3.4"
   },
   "peerDependencies": {
-    "vue": ">=3.2.31"
+    "vue": ">=3.0.0",
+    "vite": ">=2.0.0"
   },
   "dependencies": {
-    "local-pkg": "^0.4.2"
+    "local-pkg": "^0.4.3"
   }
 }
