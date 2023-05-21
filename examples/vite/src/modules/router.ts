@@ -17,4 +17,4 @@ const router = createRouter({
 	history: createWebHistory()
 })
 
-export default (app: App) => app.use(router)
+export default router
