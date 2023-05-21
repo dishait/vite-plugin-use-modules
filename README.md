@@ -54,6 +54,7 @@ const router = createRouter({
 
 export default (app: App) => app.use(router)
 
+// 如果足够兼容，可以直接导出插件
 // export default router
 
 // 如果需要选项，则可以导出数组，第二个参数即为选项
@@ -114,7 +115,7 @@ import Modules from 'vite-plugin-use-modules'
 export default defineConfig({
 	plugins: [
 		Modules({
-			auto: true // 开启自动模式
+			auto: true // 开启自动模式，auto 也支持 vite 插件的所有 transform 类型
 		})
 	]
 })
