@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.2",
   "name": "vite-plugin-use-modules",
   "description": "自动加载 modules",
   "main": "./dist/index.cjs",
