@@ -153,6 +153,10 @@ export default defineConfig({
 })
 ```
 
+4. 顺序
+
+可以通过对文件名添加数字前缀来控制模块的加载顺序，例如 `1.foo.ts` 将比 `2.bar.ts` 优先加载，以此类推。
+
 <br />
 <br />
 
