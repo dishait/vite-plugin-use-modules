@@ -22,6 +22,10 @@ export const modules = ${await createVirtualGlob(glob)}
 
 export const useModules = app => {
     Object.values(modules).forEach(module => {
+        if (!module.default) {
+            return
+        }
+
         if (typeof module.default === 'function') {
             module.default(app)
         }
