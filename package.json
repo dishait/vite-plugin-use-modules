@@ -1,5 +1,5 @@
 {
-  "version": "1.4.2",
+  "version": "1.4.3",
   "name": "vite-plugin-use-modules",
   "description": "自动加载 modules",
   "main": "./dist/index.cjs",
@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "prepublish": "pnpm run build",
+    "prepublishOnly": "pnpm run build",
     "dev": "unbuild --stub && pnpm -C examples/vite dev",
     "release": "bumpp --commit --push --tag && npm publish"
   },
