@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "build": "unbuild",
+    "prepublish": "pnpm run build",
     "dev": "unbuild --stub && pnpm -C examples/vite dev",
     "release": "bumpp --commit --push --tag && npm publish"
   },
