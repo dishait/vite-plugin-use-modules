@@ -1,5 +1,5 @@
-import { posix } from 'path'
-import { getPackageInfo } from 'local-pkg'
+import { posix } from "path"
+import { getPackageInfo } from "local-pkg"
 
 /**
  * 规范化路径
@@ -7,8 +7,8 @@ import { getPackageInfo } from 'local-pkg'
  * @returns 路径
  */
 export function normalizePath(path: string) {
-	path = path.startsWith('/') ? path : '/' + path
-	return posix.normalize(path)
+  path = path.startsWith("/") ? path : "/" + path
+  return posix.normalize(path)
 }
 
 /**
@@ -16,11 +16,11 @@ export function normalizePath(path: string) {
  * @returns
  */
 export async function isVite2() {
-	const info = await getPackageInfo('vite')
-	if (info) {
-		return /.?2/.test(info.version)
-	}
-	return false
+  const info = await getPackageInfo("vite")
+  if (info) {
+    return /^.?2/.test(info.version)
+  }
+  return false
 }
 
 /**
@@ -29,5 +29,5 @@ export async function isVite2() {
  * @returns
  */
 export function defaultNormalize(target: string) {
-	return `'${target}/*.[tj]s'`
+  return `'${target}/*.[tj]s'`
 }
