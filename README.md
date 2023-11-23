@@ -19,12 +19,12 @@ npm i vite-plugin-use-modules -D
 
 ```ts
 // vite.config.js or vite.config.ts
-import { defineConfig } from 'vite'
-import Modules from 'vite-plugin-use-modules'
+import { defineConfig } from "vite";
+import Modules from "vite-plugin-use-modules";
 
 export default defineConfig({
-	plugins: [Modules()]
-})
+  plugins: [Modules()],
+});
 ```
 
 <br />
@@ -34,9 +34,9 @@ export default defineConfig({
 1. 获取所有模块
 
 ```ts
-import { modules } from 'virtual:modules'
+import { modules } from "virtual:modules";
 
-console.log(modules) // src/modules 的所有模块都会被获取到
+console.log(modules); // src/modules 的所有模块都会被获取到
 ```
 
 <br />
@@ -45,14 +45,14 @@ console.log(modules) // src/modules 的所有模块都会被获取到
 
 ```ts
 // eg: src/modules/router.ts
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
-	routes: [],
-	history: createWebHistory()
-})
+  routes: [],
+  history: createWebHistory(),
+});
 
-export default (app: App) => app.use(router)
+export default (app: App) => app.use(router);
 
 // 如果足够兼容，可以直接导出插件
 // export default router
@@ -62,15 +62,15 @@ export default (app: App) => app.use(router)
 ```
 
 ```ts
-import App from './App.vue'
-import { createApp } from 'vue'
-import { useModules } from 'virtual:modules'
+import App from "./App.vue";
+import { createApp } from "vue";
+import { useModules } from "virtual:modules";
 
-const app = createApp(App)
+const app = createApp(App);
 
-useModules(app) // 这将注册所有的 Vue 插件
+useModules(app); // 这将注册所有的 Vue 插件
 
-app.mount('#app')
+app.mount("#app");
 ```
 
 <br />
@@ -81,9 +81,9 @@ app.mount('#app')
 
 ```json
 {
-	"compilerOptions": {
-		"types": ["vite-plugin-use-modules/client"]
-	}
+  "compilerOptions": {
+    "types": ["vite-plugin-use-modules/client"]
+  }
 }
 ```
 
@@ -94,31 +94,31 @@ app.mount('#app')
 1. 修改目标目录
 
 ```ts
-import { defineConfig } from 'vite'
-import Modules from 'vite-plugin-use-modules'
+import { defineConfig } from "vite";
+import Modules from "vite-plugin-use-modules";
 
 export default defineConfig({
-	plugins: [
-		Modules({
-			target: 'src/plugins' // 这将加载 src/plugins 下的模块，默认为 src/modules
-		})
-	]
-})
+  plugins: [
+    Modules({
+      target: "src/plugins", // 这将加载 src/plugins 下的模块，默认为 src/modules
+    }),
+  ],
+});
 ```
 
 2. 自动模式
 
 ```ts
-import { defineConfig } from 'vite'
-import Modules from 'vite-plugin-use-modules'
+import { defineConfig } from "vite";
+import Modules from "vite-plugin-use-modules";
 
 export default defineConfig({
-	plugins: [
-		Modules({
-			auto: true // 开启自动模式，auto 也支持 vite 插件的所有 transform 类型
-		})
-	]
-})
+  plugins: [
+    Modules({
+      auto: true, // 开启自动模式，auto 也支持 vite 插件的所有 transform 类型
+    }),
+  ],
+});
 ```
 
 开启后，虚拟模块的注册是非必需的
@@ -139,23 +139,24 @@ app.mount('#app')
 3. 规范化
 
 ```ts
-import { defineConfig } from 'vite'
-import Modules from 'vite-plugin-use-modules'
+import { defineConfig } from "vite";
+import Modules from "vite-plugin-use-modules";
 
 export default defineConfig({
-	plugins: [
-		Modules({
-			normalize(target) {
-				return `'${target}/*.[tj]s'` // 返回扫描的 glob
-			}
-		})
-	]
-})
+  plugins: [
+    Modules({
+      normalize(target) {
+        return `'${target}/*.[tj]s'`; // 返回扫描的 glob
+      },
+    }),
+  ],
+});
 ```
 
 4. 顺序
 
-可以通过对文件名添加数字前缀来控制模块的加载顺序，例如 `1.foo.ts` 将比 `2.bar.ts` 优先加载，以此类推。
+可以通过对文件名添加数字前缀来控制模块的加载顺序，例如 `1.foo.ts` 将比
+`2.bar.ts` 优先加载，以此类推。
 
 <br />
 <br />
