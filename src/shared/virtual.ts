@@ -28,10 +28,12 @@ export const useModules = app => {
 
         if (typeof module.default === 'function') {
             module.default(app)
+            return
         }
 
         if (Array.isArray(module.default)) {
             app.use(...module.default)
+            return
         }
         
         app.use(module.default)
